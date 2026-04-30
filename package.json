@@ -1,0 +1,21 @@
+{
+  "name": "com.cupkekgames.editortools",
+  "displayName": "CupkekGames EditorTools",
+  "version": "0.1.0",
+  "author": {
+    "name": "CupkekGames",
+    "url": "https://www.docs.cupkek.games"
+  },
+  "unity": "6000.0",
+  "documentationUrl": "https://docs.cupkek.games/",
+  "description": "Editor productivity windows: ScriptableObject creator, fuzzy search, main toolbar (Project Settings shortcut, timescale slider, Reset Time), scene bootstrapper.",
+  "keywords": [
+    "Editor",
+    "Toolbar",
+    "Productivity",
+    "CupkekGames"
+  ],
+  "dependencies": {
+    "com.cupkekgames.editorui": "0.1.0"
+  }
+}

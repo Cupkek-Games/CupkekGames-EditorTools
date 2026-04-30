@@ -1,0 +1,96 @@
+.so-creator-root {
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.so-creator-search {
+    margin: 8px 8px 4px 8px;
+    flex-shrink: 0;
+}
+
+.so-creator-scroll {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+/* ─── Recent section ─── */
+
+.so-creator-foldout {
+    margin: 4px 8px 2px 8px;
+}
+
+.so-creator-foldout > .unity-foldout__toggle > .unity-toggle__label {
+    -unity-font-style: bold;
+    font-size: 12px;
+    color: var(--unity-colors-highlight-text);
+}
+
+/* ─── Group foldouts ─── */
+
+.so-creator-group-foldout {
+    margin: 2px 8px 0 8px;
+}
+
+.so-creator-group-foldout > .unity-foldout__toggle > .unity-toggle__label {
+    -unity-font-style: bold;
+    font-size: 12px;
+}
+
+/* ─── Type items ─── */
+
+.so-creator-type-item {
+    -unity-text-align: middle-left;
+    padding: 2px 6px;
+    margin: 0 0 1px 0;
+    border-width: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.so-creator-type-item:hover {
+    background-color: var(--unity-colors-highlight-background);
+}
+
+.so-creator-item {
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+/* ─── Bottom bar ─── */
+
+.so-creator-bottom {
+    flex-shrink: 0;
+    border-top-width: 1px;
+    border-color: var(--unity-colors-app_toolbar_button-border);
+    padding: 8px;
+    background-color: var(--unity-colors-toolbar-background);
+}
+
+.so-creator-selected-label {
+    -unity-font-style: bold;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.so-creator-name-row {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.so-creator-name-label {
+    width: 64px;
+    flex-shrink: 0;
+    font-size: 12px;
+}
+
+.so-creator-name-field {
+    flex-grow: 1;
+}
+
+.so-creator-create-btn {
+    align-self: flex-end;
+    padding: 4px 16px;
+    -unity-font-style: bold;
+}
