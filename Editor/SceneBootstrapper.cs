@@ -81,10 +81,12 @@ namespace CupkekGames.EditorTools
         }
 
         // These menu items toggle behavior.
+        // Priority 300/301 — group 4: play-mode toggles. Sit together as a
+        // mutually-exclusive pair (one of them is greyed out via the validator).
 
         // This adds a menu item called "Load Bootstrap Scene On Play" to the GameSystems menu and
         // enables the behavior if selected.
-        [MenuItem(k_LoadBootstrapMenu)]
+        [MenuItem(k_LoadBootstrapMenu, false, 300)]
         private static void EnableBootstrapper()
         {
             ShouldLoadBootstrapScene = true;
@@ -99,7 +101,7 @@ namespace CupkekGames.EditorTools
 
         // Adds a menu item called "Don't Load Bootstrap Scene On Play" to the GameSystems menu and
         // disables the behavior if selected.
-        [MenuItem(k_DontLoadBootstrapMenu)]
+        [MenuItem(k_DontLoadBootstrapMenu, false, 301)]
         private static void DisableBootstrapper()
         {
             ShouldLoadBootstrapScene = false;
