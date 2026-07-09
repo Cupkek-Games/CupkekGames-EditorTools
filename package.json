@@ -16,6 +16,6 @@
     "CupkekGames"
   ],
   "dependencies": {
-    "com.cupkekgames.editorui": "0.1.0"
+    "com.cupkekgames.editorui": "0.1.1"
   }
 }
