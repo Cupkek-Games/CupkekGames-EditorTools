@@ -20,8 +20,8 @@ namespace CupkekGames.EditorTools
         private const string k_ShouldLoadBootstrap = "LoadBootstrapScene";
 
         // These appear as menu names
-        private const string k_LoadBootstrapMenu = "Tools/CupkekGames/Load Bootstrap Scene On Play";
-        private const string k_DontLoadBootstrapMenu = "Tools/CupkekGames/Don't Load Bootstrap Scene On Play";
+        private const string k_LoadBootstrapMenu = "Tools/CupkekGames/Utilities/Load Bootstrap Scene On Play";
+        private const string k_DontLoadBootstrapMenu = "Tools/CupkekGames/Utilities/Don't Load Bootstrap Scene On Play";
 
         // This gets the bootstrap scene, which must be first scene in Build Settings
         private static string BootstrapScene => EditorBuildSettings.scenes[0].path;
@@ -86,7 +86,7 @@ namespace CupkekGames.EditorTools
 
         // This adds a menu item called "Load Bootstrap Scene On Play" to the GameSystems menu and
         // enables the behavior if selected.
-        [MenuItem(k_LoadBootstrapMenu, false, 300)]
+        [MenuItem(k_LoadBootstrapMenu, false, 500)]
         private static void EnableBootstrapper()
         {
             ShouldLoadBootstrapScene = true;
@@ -101,7 +101,7 @@ namespace CupkekGames.EditorTools
 
         // Adds a menu item called "Don't Load Bootstrap Scene On Play" to the GameSystems menu and
         // disables the behavior if selected.
-        [MenuItem(k_DontLoadBootstrapMenu, false, 301)]
+        [MenuItem(k_DontLoadBootstrapMenu, false, 501)]
         private static void DisableBootstrapper()
         {
             ShouldLoadBootstrapScene = false;
