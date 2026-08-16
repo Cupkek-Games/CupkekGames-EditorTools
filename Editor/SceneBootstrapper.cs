@@ -44,6 +44,7 @@ namespace CupkekGames.EditorTools
         static SceneBootstrapper()
         {
             // Listen for the Editor changing play states
+            EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
             EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
         }
 
