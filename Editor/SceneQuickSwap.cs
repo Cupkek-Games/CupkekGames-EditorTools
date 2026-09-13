@@ -96,7 +96,7 @@ namespace CupkekGames.EditorTools
                 s_Scenes.Add(new SceneEntry(guid, path));
             }
 
-            s_Scenes.Sort((a, b) => string.Compare(a.Name, b.Name, StringComparison.OrdinalIgnoreCase));
+            s_Scenes.Sort(CompareByFolderThenName);
         }
 
         private static bool IsExcluded(string path)
@@ -153,15 +153,24 @@ namespace CupkekGames.EditorTools
             if (!favorites.Remove(guid))
                 favorites.Add(guid);
 
-            favorites.Sort(CompareBySceneName);
+            favorites.Sort(CompareGuidsByFolderThenName);
             WriteGuidList(FavoritesKey, favorites);
         }
 
-        private static int CompareBySceneName(string leftGuid, string rightGuid)
+        // Scenes group by where they live: folder first, name only to break ties inside one folder.
+        private static int CompareByFolderThenName(SceneEntry left, SceneEntry right)
+        {
+            int byFolder = string.Compare(left.Folder, right.Folder, StringComparison.OrdinalIgnoreCase);
+            return byFolder != 0
+                ? byFolder
+                : string.Compare(left.Name, right.Name, StringComparison.OrdinalIgnoreCase);
+        }
+
+        private static int CompareGuidsByFolderThenName(string leftGuid, string rightGuid)
         {
             TryGetByGuid(leftGuid, out SceneEntry left);
             TryGetByGuid(rightGuid, out SceneEntry right);
-            return string.Compare(left.Name, right.Name, StringComparison.OrdinalIgnoreCase);
+            return CompareByFolderThenName(left, right);
         }
 
         private static void RecordRecent(string guid)
